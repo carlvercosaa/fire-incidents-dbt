@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: public
+    tables:
+      - name: raw_fire_incidents
+
+models:
+  - name: stg_fire_incidents
+    description: >
+      Modelo de staging que padroniza e extrai colunas relevantes dos dados brutos de incidentes de incêndio.
+    columns:
+      - name: incident_number
+        description: Número identificador único do incidente.
+        tests:
+          - not_null
+          - unique
+
+      - name: incident_date
+        description: Data do incidente.
+        tests:
+          - not_null
+
+      - name: battalion
+        description: Batalhão responsável pela ocorrência.
+        tests:
+          - not_null
+
+      - name: neighborhood_district
+        description: Distrito do bairro onde ocorreu o incidente.
+        tests:
+          - not_null
+
+      - name: incident_year
+        description: Ano do incidente, derivado de incident_date.
+
+      - name: incident_month
+        description: Mês do incidente, derivado de incident_date.
+
+      - name: incident_day
+        description: Dia do incidente, derivado de incident_date.

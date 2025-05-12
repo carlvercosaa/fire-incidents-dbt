@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fire_incidents_summary
+    description: >
+      Tabela agregada com total de incidentes por ano, mês, batalhão e distrito.
+    columns:
+      - name: incident_year
+        description: Ano do incidente.
+
+      - name: incident_month
+        description: Mês do incidente.
+
+      - name: battalion
+        description: Batalhão onde ocorreu o incidente.
+
+      - name: neighborhood_district
+        description: Distrito do bairro.
+
+      - name: total_incidents
+        description: Quantidade total de incidentes no agrupamento.
+        tests:
+          - not_null
