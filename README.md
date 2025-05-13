@@ -8,7 +8,6 @@ Utilizamos a arquitetura em camadas no estilo **Medalhão (Bronze, Silver, Gold)
 
 ```
 models/
-├── bronze/                 ← (dados crus, se necessário)
 ├── silver/                 ← limpeza, deduplicação, enriquecimento
 │   └── stg_fire_incidents.sql
 │   └── schema.yml
@@ -104,7 +103,3 @@ dbt test
 - O projeto está pronto para expansão com camadas bronze (ex: ingestão via dbt seeds ou snapshots).
 
 ---
-
-## 📇 Autor
-
-Carl — Data Engineer em formação 🚀
